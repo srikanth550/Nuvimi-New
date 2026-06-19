@@ -1,0 +1,70 @@
+/* ============================================================
+   Nuvimi design tokens
+   Concept: a modernised, color-coded "Nutrition Facts" label -
+   thick rules, condensed display type, tabular mono numerals.
+   ============================================================ */
+:root {
+  --nuvimi-paper: #faf8f4;
+  --nuvimi-ink: #1c1a17;
+  --nuvimi-card: #ffffff;
+  --nuvimi-macro: #d9531f;
+  --nuvimi-macro-tint: #fbe6da;
+  --nuvimi-vitamin: #564a87;
+  --nuvimi-vitamin-tint: #e9e5f4;
+  --nuvimi-mineral: #51613f;
+  --nuvimi-mineral-tint: #e6ebdd;
+  --nuvimi-line: #1c1a17;
+  --nuvimi-muted: #6b6459;
+
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--nuvimi-paper);
+  color: var(--nuvimi-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+h1, h2, h3, p, figure {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+a {
+  color: var(--nuvimi-macro);
+}
+
+/* Visible keyboard focus everywhere, in addition to any component-level styling */
+:focus-visible {
+  outline: 3px solid var(--nuvimi-macro);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
