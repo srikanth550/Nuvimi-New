@@ -1,0 +1,34 @@
+server:
+  port: 8771
+
+spring:
+  application:
+    name: nuvimi-discovery-service
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    # The registry itself doesn't need to register with or query itself
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    # Faster eviction of stale instances which is convenient for local development
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    com.netflix.eureka: WARN
+    com.netflix.discovery: WARN
